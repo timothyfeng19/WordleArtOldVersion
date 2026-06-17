@@ -1,0 +1,2 @@
+Old version
+Simple script to run in terminal. Instructions shown when running the program. Uses python and re.
