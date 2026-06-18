@@ -42,8 +42,8 @@ while True:
         if max_words == "":
             max_words = 20
         elif not bool(re.match('^[0123456789]+$', max_words)):
-                print("Invalid max input, needs to be a whole number or nothing.")
-                break
+            print("Invalid max input, needs to be a whole number or nothing.")
+            break
 
         word_letters = set(word_of_day)
         non_word_letters = set("abcdefghijklmnopqrstuvwxyz") - word_letters
@@ -55,12 +55,7 @@ while True:
         for word in words:
             if len(set(word)) != 5:
                 continue
-
-            first = word[0] in word_letters
-            second = word[1] in word_letters
-            third = word[2] in word_letters
-            fourth = word[3] in word_letters
-            fifth = word[4] in word_letters
+            
             passes = 0
 
             for i in range(5):
