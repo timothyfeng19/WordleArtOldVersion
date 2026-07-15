@@ -26,10 +26,15 @@ def Check(type, id):
             return True
         else:
             return False
-    
+
+loop = 0
 while True:
     while True:
-        art = input("Enter Line here (# for green/yellow, _ for a grey space): ")
+        if loop == 0:
+            art = input("Enter line here (# for green/yellow, _ for a grey space): ")
+        else:
+            art = input("Enter line here: ")
+        
         if art == "cancel":
             quit()
         if len(art) != 5 or not bool(re.match('^[#_]+$', art)):
@@ -65,3 +70,4 @@ while True:
                 valid_words.append(word)
                 
         print("Matching words (" + str(len(valid_words[:int(max_words)])) + "/" + str(len(valid_words)) + "):", valid_words[:int(max_words)])
+        loop = 1
